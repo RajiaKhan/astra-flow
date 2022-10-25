@@ -1,10 +1,56 @@
-import React, { useState } from "react";
 import Image from "next/image";
+import React, { useEffect } from "react";
+import Head from "next/head";
 export default function Index() {
+  useEffect(() => {
+    let line_chart = new Chart(document.getElementById("line_chart"), {
+      type: "line",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        datasets: [
+          {
+            data: [12, 43, 32, 35, 46, 25, 26],
+            borderColor: ["#60a5fa"],
+            fill: true,
+            backgroundColor: "#dbeafe",
+          },
+        ],
+      },
+      options: {
+        legend: {
+          display: false,
+        },
+        scales: {
+          yAxes: [
+            {
+              gridLines: {
+                borderDash: [2],
+                borderDashOffset: [2],
+                color: "rgba(33, 37, 41, 0.3)",
+                zeroLineColor: "rgba(33, 37, 41, 0.3)",
+              },
+
+              ticks: {
+                beginAtZero: true,
+                max: 55,
+                min: 10,
+              },
+            },
+          ],
+        },
+      },
+    });
+  });
   return (
     <>
-      <body className="bg-gray-200 overflow-x-hidden">
-        <div className="w-full py-4 bg-white">
+      <Head>
+        <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
+        ></script>
+      </Head>
+      <div className="bg-gray-100 overflow-x-hidden  overflow-y-hidden">
+        <div className="w-full py-4 bg-white  ">
           <div className="flex">
             <div className="px-7">
               <Image
@@ -63,8 +109,8 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="flex gap-6">
-          <div className="w-80 bg-white h-screen">
+        <div className="flex gap-6 ">
+          <div className="w-80 bg-white h-11/12">
             <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-5 w-full pl-8 gap-5">
               <div className="">
                 <Image
@@ -157,7 +203,7 @@ export default function Index() {
               </div>
             </button>
           </div>
-          <div className="w-11/12 mt-5  ">
+          <div className="w-11/12 2xl:w-9/12 xl:w-10/12 lg:w-10/12 mt-5 px-5 ">
             <h1 className="text-2xl text-gray-800 font-bold">Dashboard</h1>
             <div className="flex  mt-6 gap-5">
               <div className="w-11/12 pt-4 pb-4 px-4 bg-white">
@@ -194,8 +240,8 @@ export default function Index() {
                           />
                           <div className="  ">
                             <div className="-mt-24 -ml-12  h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jan
                                   </p>
@@ -216,8 +262,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Feb
                                   </p>
@@ -238,8 +284,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Mar
                                   </p>
@@ -260,8 +306,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Apr
                                   </p>
@@ -282,8 +328,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     May
                                   </p>
@@ -304,8 +350,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     jun
                                   </p>
@@ -326,8 +372,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jul
                                   </p>
@@ -348,8 +394,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Aug
                                   </p>
@@ -370,8 +416,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Sep
                                   </p>
@@ -392,8 +438,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Oct
                                   </p>
@@ -414,8 +460,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Nov
                                   </p>
@@ -436,8 +482,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Dec
                                   </p>
@@ -484,8 +530,8 @@ export default function Index() {
                           />
                           <div className="  ">
                             <div className="-mt-24 -ml-12  h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jan
                                   </p>
@@ -506,8 +552,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Feb
                                   </p>
@@ -528,8 +574,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Mar
                                   </p>
@@ -550,8 +596,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Apr
                                   </p>
@@ -572,8 +618,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     May
                                   </p>
@@ -594,8 +640,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     jun
                                   </p>
@@ -616,8 +662,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jul
                                   </p>
@@ -638,8 +684,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Aug
                                   </p>
@@ -660,8 +706,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Sep
                                   </p>
@@ -682,8 +728,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Oct
                                   </p>
@@ -704,8 +750,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Nov
                                   </p>
@@ -726,8 +772,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Dec
                                   </p>
@@ -774,8 +820,8 @@ export default function Index() {
                           />
                           <div className="  ">
                             <div className="-mt-24 -ml-12  h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jan
                                   </p>
@@ -796,8 +842,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Feb
                                   </p>
@@ -818,8 +864,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Mar
                                   </p>
@@ -840,8 +886,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Apr
                                   </p>
@@ -862,8 +908,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     May
                                   </p>
@@ -884,8 +930,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     jun
                                   </p>
@@ -906,8 +952,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jul
                                   </p>
@@ -928,8 +974,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Aug
                                   </p>
@@ -950,8 +996,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Sep
                                   </p>
@@ -972,8 +1018,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Oct
                                   </p>
@@ -994,8 +1040,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Nov
                                   </p>
@@ -1016,8 +1062,8 @@ export default function Index() {
                           />
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
-                              <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px-1">
+                              <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="px- ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Dec
                                   </p>
@@ -1035,7 +1081,7 @@ export default function Index() {
             </div>
             <div className="flex mt-12 gap-12">
               <div className="w-11/12 bg-white">
-                <div className="flex px-4">
+                <div className="flex px-4 mt-4">
                   <div className="text-xl text-gray-800 font-bold">
                     Customers
                   </div>
@@ -1054,19 +1100,21 @@ export default function Index() {
                       />
                       <div className="  ">
                         <div className="-mt-32 -mr-52  ">
-                          <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                            <div className="px-1">
+                          <div className="transition-all rounded-md transform translate-y-8 w-20  ease-in-out transition duration-500 rounded-lg  bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                            <div className="gap-2 py-2 flex just fy-center items-center ">
                               <p className="text-xs  text-gray-800 font-bold">
                                 Male
                               </p>
-                              <p className="text-xs  font-semibold">25%</p>
+                              <p className="text-xs text-gray-800  font-semibold">
+                                25%
+                              </p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </a>
 
-                    <div className="h-full mt-20 pt-2">
+                    <div className="h-full mt-20 Pt">
                       <a className="relative group" href="#">
                         <Image
                           className="cursor-pointer"
@@ -1076,8 +1124,8 @@ export default function Index() {
                         />
                         <div className="  ">
                           <div className=" -mr-52  ">
-                            <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                              <div className="px-1">
+                            <div className=" transition-all rounded-md transform translate-y-8 w-20   ease-in-out transition duration-500  rounded-lg  bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                              <div className="gap-2 py-2  flex just fy-center items-center">
                                 <p className="text-xs  text-gray-800 font-bold">
                                   Others
                                 </p>
@@ -1089,7 +1137,7 @@ export default function Index() {
                       </a>
                     </div>
                   </div>
-                  <div className="h-full ">
+                  <div className="h-full w-auto ">
                     <a className="relative group" href="#">
                       <Image
                         className="cursor-pointer"
@@ -1097,10 +1145,10 @@ export default function Index() {
                         width={122}
                         height={250}
                       />
-                      <div className="  ">
-                        <div className="-mt-2 -mr-52  ">
-                          <div className="transition-all transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                            <div className="px-1">
+                      <div className=" flex justify-center items-center ">
+                        <div className=" -mr-44 ">
+                          <div className="transition-all rounded-md -mt-32 transform translate-y-8 w-20  rounded-lg ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                            <div className="px-1 flex py-2 gap-2 justify-center items-center">
                               <p className="text-xs  text-gray-800 font-bold">
                                 Female
                               </p>
@@ -1112,28 +1160,499 @@ export default function Index() {
                     </a>
                   </div>
                 </div>
+                <div className="flex px-4 mt-12">
+                  <div className="flex gap-2">
+                    <div className="">
+                      <Image
+                        className="cursor-pointer"
+                        src="/Ellipse 1.svg"
+                        width={14}
+                        height={14}
+                      />
+                    </div>
+                    <div className="mt-1">
+                      <h1 className="text-gray-600 text-xs">Female</h1>
+                    </div>
+                  </div>
+                  <div className="ml-auto text-gray-600 text-xs">50%</div>
+                </div>
+                <div className="flex px-4 mt-2">
+                  <div className="flex gap-2">
+                    <div className="">
+                      <Image
+                        className="cursor-pointer"
+                        src="/Ellipse 1 (1).svg"
+                        width={14}
+                        height={14}
+                      />
+                    </div>
+                    <div className="mt-1">
+                      <h1 className="text-gray-600 text-xs">Male</h1>
+                    </div>
+                  </div>
+                  <div className="ml-auto text-gray-600 text-xs">25%</div>
+                </div>
+                <div className="flex px-4 mt-2">
+                  <div className="flex gap-2">
+                    <div className="">
+                      <Image
+                        className="cursor-pointer"
+                        src="/Ellipse 1 (2).svg"
+                        width={14}
+                        height={14}
+                      />
+                    </div>
+                    <div className="mt-1">
+                      <h1 className="text-gray-600 text-xs">Others</h1>
+                    </div>
+                  </div>
+                  <div className="ml-auto text-gray-600 text-xs">25%</div>
+                </div>
               </div>
               <div className="w-11/12 bg-white">
                 <div className="flex justify-center items-center mt-5">
                   <Image
-                    className="cursor-pointer"
-                    src="/World all.svg"
+                    className=""
+                    src="/world all.svg"
                     width={492}
                     height={275}
                   />
                 </div>
               </div>
             </div>
+            <div className="bg-white mt-12 pb-12 px-5">
+              <div className=" w-full bg-white md:p-10 p-4 rounded-lg shadow ">
+                <div className="lg:flex justify-between w-full items-center">
+                  <div className="flex items-center mt-4 lg:mt-0"></div>
+                </div>
+                <div className="mt-8">
+                  <div className="chartjs-size-monitor">
+                    <div className="chartjs-size-monitor-expand">
+                      <div className />
+                    </div>
+                    <div className="chartjs-size-monitor-shrink">
+                      <div className />
+                    </div>
+                  </div>
+                  <canvas
+                    id="line_chart"
+                    height={520}
+                    width={1068}
+                    className="chartjs-render-monitor"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="bg-white mt-12 pb-12 px-5 ">
+              <h1 className="text-xl px-4 pt-5">Latest Transaction</h1>
+              <div className="flex gap-4 justify-center items-center mt-12 py-8 bg-gray-100">
+                <div className="  w-11/12 flex justify-center items-center">
+                  <input
+                    className="w-6 h-6 "
+                    type="checkbox"
+                    id="Large"
+                    name="Large"
+                    value="Large"
+                  />
+                  <div className="inline-block">
+                    <div className="flex space-x-6 justify-center items-center">
+                      <label
+                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                        for=""
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 bg-gray-100">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Order ID
+                  </h1>
+                </div>
+                <div className=" w-11/12 bg-gray-100">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Customer Name
+                  </h1>
+                </div>
+                <div className=" w-11/12 bg-gray-100">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Date
+                  </h1>
+                </div>
+                <div className=" w-11/12 bg-gray-100">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Total
+                  </h1>
+                </div>
+                <div className=" w-11/12 bg-gray-100">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Payment Status
+                  </h1>
+                </div>
+                <div className=" w-11/12 bg-gray-100">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Payment Method
+                  </h1>
+                </div>
+                <div className=" w-11/12 bg-gray-100">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Details
+                  </h1>
+                </div>
+              </div>
+              <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                <div className="w-11/12 flex justify-center items-center">
+                  <input
+                    className="w-6 h-6 "
+                    type="checkbox"
+                    id="Large"
+                    name="Large"
+                    value="Large"
+                  />
+                  <div className="inline-block">
+                    <div className="flex space-x-6 justify-center items-center">
+                      <label
+                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                        for=""
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    #SK25480
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Winston Bosco
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    2022-07-01
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Total
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="text-center font-bold text-lg ">
+                    <div className=" justify-center items-center flex">
+                      <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-24 py-2 ">
+                        Pending
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/visa.svg"
+                      width={60}
+                      height={20}
+                    />
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/menu.svg"
+                      width={22}
+                      height={22}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                <div className="w-11/12 flex justify-center items-center">
+                  <input
+                    className="w-6 h-6 "
+                    type="checkbox"
+                    id="Large"
+                    name="Large"
+                    value="Large"
+                  />
+                  <div className="inline-block">
+                    <div className="flex space-x-6 justify-center items-center">
+                      <label
+                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                        for=""
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    #SK25481
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Fredrick Gulgowski
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    2022-07-02
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    $6450
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="text-center font-bold text-lg ">
+                    <div className=" justify-center items-center flex">
+                      <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-20 py-2 ">
+                        Paid
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/master card.svg"
+                      width={70}
+                      height={25}
+                    />
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/menu.svg"
+                      width={22}
+                      height={22}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                <div className="w-11/12 flex justify-center items-center">
+                  <input
+                    className="w-6 h-6 "
+                    type="checkbox"
+                    id="Large"
+                    name="Large"
+                    value="Large"
+                  />
+                  <div className="inline-block">
+                    <div className="flex space-x-6 justify-center items-center">
+                      <label
+                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                        for=""
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    #SK25482
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Joran Homenick Jr.
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    2022-07-02
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    $7450
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="text-center font-bold text-lg ">
+                    <div className=" justify-center items-center flex">
+                      <div className="bg-blue-50 hover:bg-blue-100 cursor-pointer text-blue-500 rounded-full w-24 py-2 ">
+                        Refund
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/master card.svg"
+                      width={70}
+                      height={25}
+                    />
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/menu.svg"
+                      width={22}
+                      height={22}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                <div className="w-11/12 flex justify-center items-center">
+                  <input
+                    className="w-6 h-6 "
+                    type="checkbox"
+                    id="Large"
+                    name="Large"
+                    value="Large"
+                  />
+                  <div className="inline-block">
+                    <div className="flex space-x-6 justify-center items-center">
+                      <label
+                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                        for=""
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    #SK25483
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Mikael Jordan
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    2022-07-02
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    $74500
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="text-center font-bold text-lg ">
+                    <div className=" justify-center items-center flex">
+                      <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-24 py-2 ">
+                        Pending
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/XMLID 4.svg"
+                      width={75}
+                      height={30}
+                    />
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/menu.svg"
+                      width={22}
+                      height={22}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                <div className="w-11/12 flex justify-center items-center">
+                  <input
+                    className="w-6 h-6 "
+                    type="checkbox"
+                    id="Large"
+                    name="Large"
+                    value="Large"
+                  />
+                  <div className="inline-block">
+                    <div className="flex space-x-6 justify-center items-center">
+                      <label
+                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                        for=""
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    #SK25484
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    Mikael Jordan
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    2022-07-02
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <h1 className="text-center font-bold text-lg text-gray-800">
+                    $9475
+                  </h1>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="text-center font-bold text-lg ">
+                    <div className=" justify-center items-center flex">
+                      <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-20 py-2 ">
+                        Paid
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/visa.svg"
+                      width={60}
+                      height={20}
+                    />
+                  </div>
+                </div>
+                <div className=" w-11/12 ">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      className="cursor-pointer"
+                      src="/menu.svg"
+                      width={22}
+                      height={22}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </body>
+      </div>
       <style>
         {`         
          .gap{
             gap:3px;
          }
          .pt{
-            padding-top:5.5px;
+            margin-top:30.8px;
+         }
+         .Pt{
+            padding-top:9.5px;
          }
                 `}
       </style>
