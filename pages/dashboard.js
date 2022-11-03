@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import Head from "next/head";
+import Navbar from "../comps/Navbar";
 export default function Index() {
   useEffect(() => {
     let line_chart = new Chart(document.getElementById("line_chart"), {
@@ -43,6 +44,7 @@ export default function Index() {
   });
   return (
     <>
+      <Navbar />
       <Head>
         <script
           defer
@@ -50,7 +52,7 @@ export default function Index() {
         ></script>
       </Head>
       <div className="bg-gray-100 overflow-x-hidden  overflow-y-hidden">
-        <div className="w-full py-4 bg-white  ">
+        <div className="w-full py-4 bg-white  hidden lg:block xl:block 2xl:block md:block ">
           <div className="flex">
             <div className="px-7">
               <Image
@@ -109,8 +111,8 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="flex gap-6 ">
-          <div className="w-80 bg-white h-11/12">
+        <div className="flex gap-6  ">
+          <div className="w-80 hidden md:block lg:block xl:block 2xl:block bg-white h-11/12">
             <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-5 w-full pl-8 gap-5">
               <div className="">
                 <Image
@@ -134,7 +136,7 @@ export default function Index() {
                 />
               </div>
               <div className="">
-                <h1 className="text-gray-600">Dashboard</h1>
+                <h1 className="text-gray-600 ">Dashboard</h1>
               </div>
             </button>
             <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-3 w-full pl-8 gap-5">
@@ -203,11 +205,11 @@ export default function Index() {
               </div>
             </button>
           </div>
-          <div className="w-11/12 2xl:w-9/12 xl:w-10/12 lg:w-10/12 mt-5 px-5 ">
+          <div className=" w-full md:w-8/12 2xl:w-9/12 xl:w-10/12 lg:w-10/12 mt-5 lg:px-1 xl:px-1 2xl:px-5 px-0 ">
             <h1 className="text-2xl text-gray-800 font-bold">Dashboard</h1>
-            <div className="flex  mt-6 gap-5">
+            <div className="flex flex-col lg:flex-row  xl:flex-row 2xl:flex-row  justify-center items-center mt-6 gap-5">
               <div className="w-11/12 pt-4 pb-4 px-4 bg-white">
-                <div className="flex ">
+                <div className="flex justify-center items-center py-4 ">
                   <div className="text-xl text-gray-800 font-bold">
                     Monthly Earning
                   </div>
@@ -220,17 +222,19 @@ export default function Index() {
                     />
                   </div>
                 </div>
-                <div className="flex mt-8">
+                <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row md:flex-row justify-center items-center  lg:justify-start lg:items-start   xl:justify-start xl:items-start md:justify-start md:items-start  2xl:justify-start 2xl:items-start lg:mt-8 xl:mt-8 2xl:mt-8 md:mt-8 mt-3">
                   <div className="">
-                    <h1 className="text-xl text-gray-800 font-bold">$54,785</h1>
-                    <h1 className="text-sm font-semibold mt-3">
+                    <h1 className="text-xl text-gray-800 font-bold text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
+                      $54,785
+                    </h1>
+                    <h1 className="lg:text-xs xl:text-xs 2xl:text-sm text-sm  font-semibold mt-3  text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
                       <span className="text-orange-600 font-bold">20% +</span>{" "}
                       from previous month
                     </h1>
                   </div>
-                  <div className="ml-auto">
-                    <div className="flex gap">
-                      <div className="w-2 ml-12 ">
+                  <div className="lg:ml-auto xl:ml-auto md:ml-auto ml-0">
+                    <div className="flex gap lg:pb-0 xl:pb-0 2xl:pb-0 md:pb-0 pb-16">
+                      <div className="w-2 lg:ml-12 xl:ml-12 2xl:ml-12 md:ml-12 ml-3">
                         <a className="relative group " href="#">
                           <Image
                             className="cursor-pointer"
@@ -241,7 +245,7 @@ export default function Index() {
                           <div className="  ">
                             <div className="-mt-24 -ml-12  h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jan
                                   </p>
@@ -263,7 +267,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Feb
                                   </p>
@@ -285,7 +289,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Mar
                                   </p>
@@ -307,7 +311,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Apr
                                   </p>
@@ -329,7 +333,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     May
                                   </p>
@@ -351,7 +355,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     jun
                                   </p>
@@ -373,7 +377,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jul
                                   </p>
@@ -395,7 +399,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Aug
                                   </p>
@@ -417,7 +421,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Sep
                                   </p>
@@ -439,7 +443,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Oct
                                   </p>
@@ -461,7 +465,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Nov
                                   </p>
@@ -483,7 +487,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Dec
                                   </p>
@@ -499,7 +503,7 @@ export default function Index() {
                 </div>
               </div>
               <div className="w-11/12 pt-4 pb-4 px-4 bg-white">
-                <div className="flex ">
+                <div className="flex  py-4">
                   <div className="text-xl text-gray-800 font-bold">Orders</div>
                   <div className="ml-auto">
                     <Image
@@ -510,17 +514,19 @@ export default function Index() {
                     />
                   </div>
                 </div>
-                <div className="flex mt-8">
+                <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row md:flex-row justify-center items-center  lg:justify-start lg:items-start   xl:justify-start xl:items-start md:justify-start md:items-start  2xl:justify-start 2xl:items-start lg:mt-8 xl:mt-8 2xl:mt-8 md:mt-8 mt-3">
                   <div className="">
-                    <h1 className="text-xl text-gray-800 font-bold">$1629</h1>
-                    <h1 className="text-sm font-semibold mt-3">
+                    <h1 className="text-xl text-gray-800 font-bold text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
+                      $1629
+                    </h1>
+                    <h1 className="lg:text-xs xl:text-xs 2xl:text-sm text-sm font-semibold mt-3">
                       <span className="text-green-600 font-bold">5% +</span>{" "}
                       from previous month
                     </h1>
                   </div>
-                  <div className="ml-auto">
-                    <div className="flex gap">
-                      <div className="w-2 ml-12 ">
+                  <div className="lg:ml-auto xl:ml-auto md:ml-auto ml-0">
+                    <div className="flex gap flex gap lg:pb-0 xl:pb-0 2xl:pb-0 md:pb-0 pb-16">
+                      <div className="w-2 lg:ml-12 xl:ml-12 2xl:ml-12 md:ml-12 ml-3">
                         <a className="relative group " href="#">
                           <Image
                             className="cursor-pointer"
@@ -531,7 +537,7 @@ export default function Index() {
                           <div className="  ">
                             <div className="-mt-24 -ml-12  h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jan
                                   </p>
@@ -553,7 +559,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Feb
                                   </p>
@@ -564,7 +570,7 @@ export default function Index() {
                           </div>
                         </a>
                       </div>
-                      <div className="  w-2 ">
+                      <div className=" w-2 ">
                         <a className="relative group" href="#">
                           <Image
                             className="cursor-pointer"
@@ -575,7 +581,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Mar
                                   </p>
@@ -597,7 +603,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Apr
                                   </p>
@@ -619,7 +625,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     May
                                   </p>
@@ -641,7 +647,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     jun
                                   </p>
@@ -663,7 +669,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jul
                                   </p>
@@ -685,7 +691,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Aug
                                   </p>
@@ -707,7 +713,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Sep
                                   </p>
@@ -729,7 +735,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Oct
                                   </p>
@@ -751,7 +757,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Nov
                                   </p>
@@ -773,7 +779,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Dec
                                   </p>
@@ -789,7 +795,7 @@ export default function Index() {
                 </div>
               </div>
               <div className="w-11/12 pt-8 pb-8 px-4 bg-white">
-                <div className="flex ">
+                <div className="flex  ">
                   <div className="text-xl text-gray-800 font-bold">Revenue</div>
                   <div className="ml-auto">
                     <Image
@@ -800,17 +806,19 @@ export default function Index() {
                     />
                   </div>
                 </div>
-                <div className="flex mt-8">
+                <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row md:flex-row justify-center items-center  lg:justify-start lg:items-start   xl:justify-start xl:items-start md:justify-start md:items-start  2xl:justify-start 2xl:items-start lg:mt-8 xl:mt-8 2xl:mt-8 md:mt-8 mt-3">
                   <div className="">
-                    <h1 className="text-xl text-gray-800 font-bold">$75,657</h1>
-                    <h1 className="text-sm font-semibold mt-3">
+                    <h1 className=" text-xl text-gray-800 font-bold text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
+                      $75,657
+                    </h1>
+                    <h1 className="lg:text-xs xl:text-xs 2xl:text-sm text-sm font-semibold mt-3">
                       <span className="text-orange-600 font-bold">10% +</span>{" "}
                       from previous month
                     </h1>
                   </div>
-                  <div className="ml-auto">
-                    <div className="flex gap">
-                      <div className="w-2 ml-12 ">
+                  <div className="lg:ml-auto xl:ml-auto md:ml-auto ml-0">
+                    <div className="flex gap flex gap lg:pb-0 xl:pb-0 2xl:pb-0 md:pb-0 pb-16">
+                      <div className="w-2 lg:ml-12 xl:ml-12 2xl:ml-12 md:ml-12 ml-3">
                         <a className="relative group " href="#">
                           <Image
                             className="cursor-pointer"
@@ -821,7 +829,7 @@ export default function Index() {
                           <div className="  ">
                             <div className="-mt-24 -ml-12  h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jan
                                   </p>
@@ -843,7 +851,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Feb
                                   </p>
@@ -865,7 +873,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Mar
                                   </p>
@@ -887,7 +895,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Apr
                                   </p>
@@ -909,7 +917,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     May
                                   </p>
@@ -931,7 +939,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     jun
                                   </p>
@@ -953,7 +961,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Jul
                                   </p>
@@ -975,7 +983,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Aug
                                   </p>
@@ -997,7 +1005,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Sep
                                   </p>
@@ -1019,7 +1027,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Oct
                                   </p>
@@ -1041,7 +1049,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Nov
                                   </p>
@@ -1063,7 +1071,7 @@ export default function Index() {
                           <div className=" bg-red-700 ">
                             <div className="-mt-32 -mr-52   h-0 ">
                               <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                                <div className="px- ">
+                                <div className="px-2 ">
                                   <p className="text-xs  text-gray-800 font-bold">
                                     Dec
                                   </p>
@@ -1079,7 +1087,7 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            <div className="flex mt-12 gap-12">
+            <div className="flex  flex-col lg:flex-row  xl:flex-row 2xl:flex-row  justify-center items-center  mt-12 gap-12">
               <div className="w-11/12 bg-white">
                 <div className="flex px-4 mt-4">
                   <div className="text-xl text-gray-800 font-bold">
@@ -1089,7 +1097,7 @@ export default function Index() {
                     July 2022
                   </div>
                 </div>
-                <div className="flex justify-center items-center bg-white">
+                <div className="flex justify-center items-center bg-white lg:mt-0 xl:mt-20 2xl:mt-32 mt-0   py-6">
                   <div className="  h-full pt ">
                     <a className="relative group " href="#">
                       <Image
@@ -1100,7 +1108,7 @@ export default function Index() {
                       />
                       <div className="  ">
                         <div className="-mt-32 -mr-52  ">
-                          <div className="transition-all rounded-md transform translate-y-8 w-20  ease-in-out transition duration-500 rounded-lg  bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                          <div className="transition-all rounded-md transform translate-y-8 w-20 px-2 ease-in-out transition duration-500 rounded-lg  bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
                             <div className="gap-2 py-2 flex just fy-center items-center ">
                               <p className="text-xs  text-gray-800 font-bold">
                                 Male
@@ -1115,7 +1123,7 @@ export default function Index() {
                     </a>
 
                     <div className="h-full mt-20 Pt">
-                      <a className="relative group" href="#">
+                      <a className="relative group " href="#">
                         <Image
                           className="cursor-pointer"
                           src="/Slice-2.svg"
@@ -1124,7 +1132,7 @@ export default function Index() {
                         />
                         <div className="  ">
                           <div className=" -mr-52  ">
-                            <div className=" transition-all rounded-md transform translate-y-8 w-20   ease-in-out transition duration-500  rounded-lg  bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                            <div className=" transition-all rounded-md transform translate-y-8 w-20 px-2 ease-in-out transition duration-500  rounded-lg  bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
                               <div className="gap-2 py-2  flex just fy-center items-center">
                                 <p className="text-xs  text-gray-800 font-bold">
                                   Others
@@ -1160,7 +1168,7 @@ export default function Index() {
                     </a>
                   </div>
                 </div>
-                <div className="flex px-4 mt-12">
+                <div className="flex px-4  mt-20">
                   <div className="flex gap-2">
                     <div className="">
                       <Image
@@ -1209,433 +1217,1302 @@ export default function Index() {
                   <div className="ml-auto text-gray-600 text-xs">25%</div>
                 </div>
               </div>
-              <div className="w-11/12 bg-white">
-                <div className="flex justify-center items-center mt-5">
+              <div className="w-11/12 bg-white px-2">
+                <h1 className="text-xl text-gray-800 font-bold px-3 mt-5">
+                  Top Countries
+                </h1>
+                <div className="block lg:hidden xl:hidden 2xl:hidden ">
                   <Image
-                    className=""
-                    src="/world all.svg"
-                    width={492}
-                    height={275}
+                    className="mt-5"
+                    src="/world all (2).svg"
+                    width={592}
+                    height={475}
                   />
+                </div>
+                <div className=" container mx-auto ">
+                  <div className="hidden lg:block xl:block 2xl:block ">
+                    <div className="relative flex justify-center items-center  mt-5">
+                      <Image
+                        className=""
+                        src="/world all (1).svg"
+                        width={592}
+                        height={475}
+                      />
+                      <div className=" absolute  top-1/4 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className=" pr-64 pt-2">
+                          <a className="relative group pr-12" href="#">
+                            <Image
+                              className=""
+                              src="/location.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-24 -ml-5  ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      United States
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className=" absolute  top-1/4 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className=" pr-16 mt-36">
+                          <a className="relative group pr-32" href="#">
+                            <Image
+                              className=""
+                              src="/location1.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-4 -ml-12  h-0 ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      Feb
+                                    </p>
+                                    <p className="text-xs  font-semibold">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className=" absolute  top-20 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className=" pr-7 mt-2">
+                          <a className="relative group pr-24" href="#">
+                            <Image
+                              className=""
+                              src="/location2.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-16 -ml-5 h-0 ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      Jan
+                                    </p>
+                                    <p className="text-xs  font-semibold">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className=" absolute  top-1/4 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className="pl-12  mt-24">
+                          <a className="relative group " href="#">
+                            <Image
+                              className=""
+                              src="/location3.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-16 -ml-5 h-0 ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      Jan
+                                    </p>
+                                    <p className="text-xs  font-semibold">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className=" absolute  top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className="pl-32 ml-12 mt-5 ">
+                          <a className="relative group " href="#">
+                            <Image
+                              className=""
+                              src="/location6.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-2 -ml-5 h-0 ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      Jan
+                                    </p>
+                                    <p className="text-xs  font-semibold">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className=" absolute  top-1/4 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className=" pl-64 pt-2">
+                          <a className="relative group " href="#">
+                            <Image
+                              className=""
+                              src="/location7.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-20 -ml-5  h-0 ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      Jan
+                                    </p>
+                                    <p className="text-xs  font-semibold">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className=" absolute  top-1/4 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className=" ml-48 pl-96">
+                          <a className="relative group " href="#">
+                            <Image
+                              className=""
+                              src="/location8.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-20 -ml-5  h-0 ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      Jan
+                                    </p>
+                                    <p className="text-xs  font-semibold">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className=" absolute  top-1/4 left-1/2 transform -translate-x-3/4 -translate-y-1/4 ">
+                        <div className=" ml-80 pl-96 mt-20">
+                          <a className="relative group " href="#">
+                            <Image
+                              className=""
+                              src="/location9.svg"
+                              width={30}
+                              height={30}
+                            />
+                            <div className="  ">
+                              <div className="-mt-20 -ml-5  h-0 ">
+                                <div className="transition-all rounded-md transform translate-y-8 w-12  ease-in-out transition duration-500   bg-gray-100 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                                  <div className="px-2 ">
+                                    <p className="text-xs  text-gray-800 font-bold">
+                                      Jan
+                                    </p>
+                                    <p className="text-xs  font-semibold">10</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row gap-16 mb-12 px-3">
+                    <div className="w-11/12">
+                      <div className=" flex ">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (3).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            United States
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold">
+                          $2300
+                        </div>
+                      </div>
+                      <div className=" flex mt-1">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (4).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            China
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold ">
+                          $4300
+                        </div>
+                      </div>
+                      <div className=" flex mt-1">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (5).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            Russia
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold ">
+                          $1300
+                        </div>
+                      </div>
+                      <div className=" flex mt-1">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (6).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            Canada
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold ">
+                          $6300
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="w-11/12 ">
+                      <div className=" flex  ">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (3).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            United States
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold">
+                          $2300
+                        </div>
+                      </div>
+                      <div className=" flex mt-1">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (4).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            China
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold ">
+                          $4300
+                        </div>
+                      </div>
+                      <div className=" flex mt-1">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (5).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            Russia
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold ">
+                          $1300
+                        </div>
+                      </div>
+                      <div className=" flex mt-1">
+                        <div className="flex">
+                          <div className="">
+                            <Image
+                              className=""
+                              src="/Ellipse 1 (6).svg"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
+                          <div className="px-3 text-sm font-semibold">
+                            Canada
+                          </div>
+                        </div>
+                        <div className="ml-auto text-gray-800 font-bold ">
+                          $6300
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white mt-12 pb-12 px-5">
-              <div className=" w-full bg-white md:p-10 p-4 rounded-lg shadow ">
-                <div className="lg:flex justify-between w-full items-center">
-                  <div className="flex items-center mt-4 lg:mt-0"></div>
-                </div>
-                <div className="mt-8">
-                  <div className="chartjs-size-monitor">
-                    <div className="chartjs-size-monitor-expand">
-                      <div className />
+            <div className="px-3">
+              <div className="bg-white mt-12 pb-12 px-5">
+                <h1 className="text-gray-800 2xl:text-xl lg:text-xl xl:text-xl md:text-xl text-md font-bold lg:px-12 xl:px-12 2xl:px-12 md:px-12 px-2 pt-12">
+                  Social Media Orders Analytical Report
+                </h1>
+                <div className="block lg:hidden xl:hidden 2xl:hidden  mt-5">
+                  <div className="flex justify-center items-center">
+                    <div className="w-11/12 border-l mt-5  px-3">
+                      <div className="text-gray-600 text-sm mb-2">Facebook</div>
+                      <div className="font-bold text-2xl">249</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
                     </div>
-                    <div className="chartjs-size-monitor-shrink">
-                      <div className />
+                    <div className="w-11/12 border-l mt-5  px-3">
+                      <div className="text-gray-600 text-sm mb-2">
+                        Instragram
+                      </div>
+                      <div className="font-bold text-2xl">4334</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
                     </div>
                   </div>
-                  <canvas
-                    id="line_chart"
-                    height={520}
-                    width={1068}
-                    className="chartjs-render-monitor"
-                  />
+                  <div className="flex justify-center items-center mt-5">
+                    <div className="w-11/12 border-l mt-5  px-3">
+                      <div className="text-gray-600 text-sm mb-2">Youtube</div>
+                      <div className="font-bold text-2xl">6872</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
+                    </div>
+                    <div className="w-11/12 border-l mt-5  px-3">
+                      <div className="text-gray-600 text-sm mb-2">
+                        Total Orders
+                      </div>
+                      <div className="font-bold text-2xl">4655</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:block xl:block 2xl:block">
+                  <div className=" flex  justify-center items-center mt-12 ">
+                    <div className="w-11/12 border-l mt-5 ml-12 px-5">
+                      <div className="text-gray-600 text-sm mb-2">Facebook</div>
+                      <div className="font-bold text-2xl">249</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
+                    </div>
+                    <div className="w-11/12 border-l mt-5 ml-12 px-5">
+                      <div className="text-gray-600 text-sm mb-2">
+                        Instragram
+                      </div>
+                      <div className="font-bold text-2xl">4334</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
+                    </div>
+                    <div className="w-11/12 border-l mt-5 ml-12 px-5">
+                      <div className="text-gray-600 text-sm mb-2">Youtube</div>
+                      <div className="font-bold text-2xl">6872</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
+                    </div>
+                    <div className="w-11/12 border-l mt-5 ml-12 px-5">
+                      <div className="text-gray-600 text-sm mb-2">
+                        Total Orders
+                      </div>
+                      <div className="font-bold text-2xl">4655</div>
+                      <div className="text-gray-600 text-sm mt-2">
+                        In last 10 days
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-full bg-white md:p-10 lg:p-4 xl:p-4 2xl:p-4 p-0  ">
+                  <div className="lg:flex justify-between w-full items-center">
+                    <div className="flex items-center mt-4 lg:mt-0"></div>
+                  </div>
+                  <div className="mt-8">
+                    <div className="chartjs-size-monitor">
+                      <div className="chartjs-size-monitor-expand">
+                        <div className />
+                      </div>
+                      <div className="chartjs-size-monitor-shrink">
+                        <div className />
+                      </div>
+                    </div>
+                    <canvas
+                      id="line_chart"
+                      height={520}
+                      width={1068}
+                      className="chartjs-render-monitor"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white mt-12 pb-12 px-5 ">
-              <h1 className="text-xl px-4 pt-5">Latest Transaction</h1>
-              <div className="flex gap-4 justify-center items-center mt-12 py-8 bg-gray-100">
-                <div className="  w-11/12 flex justify-center items-center">
-                  <input
-                    className="w-6 h-6 "
-                    type="checkbox"
-                    id="Large"
-                    name="Large"
-                    value="Large"
-                  />
-                  <div className="inline-block">
-                    <div className="flex space-x-6 justify-center items-center">
-                      <label
-                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
-                        for=""
-                      ></label>
+            <div className="px-3">
+              <div className="bg-white mt-12 pb-12 px-3 ">
+                <h1 className="text-xl px-4 pt-5">Latest Transaction</h1>
+                <div className=" hidden lg:block xl:block 2xl:block ">
+                  <div className="flex gap-4 justify-center items-center mt-12 py-8 bg-gray-100">
+                    <div className="  w-11/12 flex justify-center items-center">
+                      <input
+                        className="w-6 h-6 "
+                        type="checkbox"
+                        id="Large"
+                        name="Large"
+                        value="Large"
+                      />
+                      <div className="inline-block">
+                        <div className="flex space-x-6 justify-center items-center">
+                          <label
+                            className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                            for=""
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 bg-gray-100">
+                      <h1 className="text-center font-bold text-lg text-gray-800">
+                        Order ID
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 bg-gray-100">
+                      <h1 className="text-center font-bold text-lg text-gray-800">
+                        Customer Name
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 bg-gray-100">
+                      <h1 className="text-center font-bold text-lg text-gray-800">
+                        Date
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 bg-gray-100">
+                      <h1 className="text-center font-bold text-lg text-gray-800">
+                        Total
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 bg-gray-100">
+                      <h1 className="text-center font-bold text-lg text-gray-800">
+                        Payment Status
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 bg-gray-100">
+                      <h1 className="text-center font-bold text-lg text-gray-800">
+                        Payment Method
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 bg-gray-100">
+                      <h1 className="text-center font-bold text-lg text-gray-800">
+                        Details
+                      </h1>
                     </div>
                   </div>
-                </div>
-                <div className=" w-11/12 bg-gray-100">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Order ID
-                  </h1>
-                </div>
-                <div className=" w-11/12 bg-gray-100">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Customer Name
-                  </h1>
-                </div>
-                <div className=" w-11/12 bg-gray-100">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Date
-                  </h1>
-                </div>
-                <div className=" w-11/12 bg-gray-100">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Total
-                  </h1>
-                </div>
-                <div className=" w-11/12 bg-gray-100">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Payment Status
-                  </h1>
-                </div>
-                <div className=" w-11/12 bg-gray-100">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Payment Method
-                  </h1>
-                </div>
-                <div className=" w-11/12 bg-gray-100">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Details
-                  </h1>
-                </div>
-              </div>
-              <div className="flex gap-4 justify-center items-center mt-8 py-8">
-                <div className="w-11/12 flex justify-center items-center">
-                  <input
-                    className="w-6 h-6 "
-                    type="checkbox"
-                    id="Large"
-                    name="Large"
-                    value="Large"
-                  />
-                  <div className="inline-block">
-                    <div className="flex space-x-6 justify-center items-center">
-                      <label
-                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
-                        for=""
-                      ></label>
+                  <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                    <div className="w-11/12 flex justify-center items-center">
+                      <input
+                        className="w-6 h-6 "
+                        type="checkbox"
+                        id="Large"
+                        name="Large"
+                        value="Large"
+                      />
+                      <div className="inline-block">
+                        <div className="flex space-x-6 justify-center items-center">
+                          <label
+                            className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                            for=""
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        #SK25480
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        Winston Bosco
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        2022-07-01
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        $6450
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="text-center font-semibold text-md ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-24 py-2 ">
+                            Pending
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/visa.svg"
+                          width={60}
+                          height={20}
+                        />
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/menu.svg"
+                          width={22}
+                          height={22}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    #SK25480
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Winston Bosco
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    2022-07-01
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Total
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="text-center font-bold text-lg ">
-                    <div className=" justify-center items-center flex">
-                      <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-24 py-2 ">
-                        Pending
+                  <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                    <div className="w-11/12 flex justify-center items-center">
+                      <input
+                        className="w-6 h-6 "
+                        type="checkbox"
+                        id="Large"
+                        name="Large"
+                        value="Large"
+                      />
+                      <div className="inline-block">
+                        <div className="flex space-x-6 justify-center items-center">
+                          <label
+                            className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                            for=""
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        #SK25481
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        Fredrick Gulgowski
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        2022-07-02
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        $6450
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="text-center font-semibold text-md ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-20 py-2 ">
+                            Paid
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/master card.svg"
+                          width={70}
+                          height={25}
+                        />
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/menu.svg"
+                          width={22}
+                          height={22}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 justify-center items-center mt-8 py-8">
+                    <div className="w-11/12 flex justify-center items-center">
+                      <input
+                        className="w-6 h-6 "
+                        type="checkbox"
+                        id="Large"
+                        name="Large"
+                        value="Large"
+                      />
+                      <div className="inline-block">
+                        <div className="flex space-x-6 justify-center items-center">
+                          <label
+                            className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                            for=""
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        #SK25482
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        Joran Homenick Jr.
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        2022-07-02
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        $7450
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="text-center font-bold text-lg ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-blue-50 hover:bg-blue-100 cursor-pointer text-blue-500 rounded-full w-24 py-2 ">
+                            Refund
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/master card.svg"
+                          width={70}
+                          height={25}
+                        />
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/menu.svg"
+                          width={22}
+                          height={22}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex  gap-4 justify-center items-center mt-8 py-8">
+                    <div className="w-11/12 flex  justify-center items-center">
+                      <input
+                        className="w-6 h-6 "
+                        type="checkbox"
+                        id="Large"
+                        name="Large"
+                        value="Large"
+                      />
+                      <div className="inline-block">
+                        <div className="flex space-x-6 justify-center items-center">
+                          <label
+                            className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                            for=""
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        #SK25483
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        Mikael Jordan
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        2022-07-02
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        $74500
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="text-center font-semibold text-md ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-24 py-2 ">
+                            Pending
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/XMLID 4.svg"
+                          width={75}
+                          height={30}
+                        />
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/menu.svg"
+                          width={22}
+                          height={22}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 justify-center items-center mt-8 py-8 ">
+                    <div className="w-11/12 flex justify-center items-center">
+                      <input
+                        className="w-6 h-6 "
+                        type="checkbox"
+                        id="Large"
+                        name="Large"
+                        value="Large"
+                      />
+                      <div className="inline-block">
+                        <div className="flex space-x-6 justify-center items-center">
+                          <label
+                            className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                            for=""
+                          ></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        #SK25484
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        Mikael Jordan
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        2022-07-02
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <h1 className="text-center font-semibold text-md text-gray-800">
+                        $9475
+                      </h1>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="text-center font-semibold text-md ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-20 py-2 ">
+                            Paid
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/visa.svg"
+                          width={60}
+                          height={20}
+                        />
+                      </div>
+                    </div>
+                    <div className=" w-11/12 ">
+                      <div className="flex justify-center items-center">
+                        <Image
+                          className="cursor-pointer"
+                          src="/menu.svg"
+                          width={22}
+                          height={22}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/visa.svg"
-                      width={60}
-                      height={20}
-                    />
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/menu.svg"
-                      width={22}
-                      height={22}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4 justify-center items-center mt-8 py-8">
-                <div className="w-11/12 flex justify-center items-center">
-                  <input
-                    className="w-6 h-6 "
-                    type="checkbox"
-                    id="Large"
-                    name="Large"
-                    value="Large"
-                  />
-                  <div className="inline-block">
-                    <div className="flex space-x-6 justify-center items-center">
-                      <label
-                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
-                        for=""
-                      ></label>
-                    </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    #SK25481
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Fredrick Gulgowski
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    2022-07-02
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    $6450
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="text-center font-bold text-lg ">
-                    <div className=" justify-center items-center flex">
-                      <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-20 py-2 ">
-                        Paid
+                <div className="block lg:hidden xl:hidden 2xl:hidden  mt-12">
+                  <div className="flex overflow-x-scroll  ">
+                    <div className="w-11/12  ">
+                      <div className="bg-gray-100 py-7  w-full ">
+                        <div className="px-8 pb-1">
+                          <input
+                            className="w-4 h-4"
+                            type="checkbox"
+                            id="Large"
+                            name="Large"
+                            value="Large"
+                          />
+                          <div className="inline-block">
+                            <div className="flex space-x-6 justify-center items-center">
+                              <label
+                                className=" text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                                for=""
+                              ></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="">
+                        <div className="ml-8">
+                          <input
+                            className="w-4 h-4 mt-12"
+                            type="checkbox"
+                            id="Large"
+                            name="Large"
+                            value="Large"
+                          />
+                          <div className="inline-block">
+                            <div className="flex space-x-6 justify-center items-center">
+                              <label
+                                className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                                for=""
+                              ></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="">
+                        <div className="ml-8">
+                          <input
+                            className="w-4 h-4 mt-12"
+                            type="checkbox"
+                            id="Large"
+                            name="Large"
+                            value="Large"
+                          />
+                          <div className="inline-block">
+                            <div className="flex space-x-6 justify-center items-center">
+                              <label
+                                className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                                for=""
+                              ></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="">
+                        <div className="ml-8">
+                          <input
+                            className="w-4 h-4 mt-12"
+                            type="checkbox"
+                            id="Large"
+                            name="Large"
+                            value="Large"
+                          />
+                          <div className="inline-block">
+                            <div className="flex space-x-6 justify-center items-center">
+                              <label
+                                className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                                for=""
+                              ></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="">
+                        <div className="ml-8">
+                          <input
+                            className="w-4 h-4 mt-12"
+                            type="checkbox"
+                            id="Large"
+                            name="Large"
+                            value="Large"
+                          />
+                          <div className="inline-block">
+                            <div className="flex space-x-6 justify-center items-center">
+                              <label
+                                className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                                for=""
+                              ></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="">
+                        <div className="ml-8">
+                          <input
+                            className="w-4 h-4 mt-12"
+                            type="checkbox"
+                            id="Large"
+                            name="Large"
+                            value="Large"
+                          />
+                          <div className="inline-block">
+                            <div className="flex space-x-6 justify-center items-center">
+                              <label
+                                className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
+                                for=""
+                              ></label>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/master card.svg"
-                      width={70}
-                      height={25}
-                    />
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/menu.svg"
-                      width={22}
-                      height={22}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4 justify-center items-center mt-8 py-8">
-                <div className="w-11/12 flex justify-center items-center">
-                  <input
-                    className="w-6 h-6 "
-                    type="checkbox"
-                    id="Large"
-                    name="Large"
-                    value="Large"
-                  />
-                  <div className="inline-block">
-                    <div className="flex space-x-6 justify-center items-center">
-                      <label
-                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
-                        for=""
-                      ></label>
-                    </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    #SK25482
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Joran Homenick Jr.
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    2022-07-02
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    $7450
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="text-center font-bold text-lg ">
-                    <div className=" justify-center items-center flex">
-                      <div className="bg-blue-50 hover:bg-blue-100 cursor-pointer text-blue-500 rounded-full w-24 py-2 ">
-                        Refund
+                    <div className="w-11/12 ">
+                      <div className="bg-gray-100 py-8">
+                        <h1 className="text-gray-800 font-semibold text-sm w-11/12 ml-8">
+                          Order id
+                        </h1>
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        #SK25484
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        #SK25484
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        #SK25484
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        #SK25484
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        #SK25484
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/master card.svg"
-                      width={70}
-                      height={25}
-                    />
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/menu.svg"
-                      width={22}
-                      height={22}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4 justify-center items-center mt-8 py-8">
-                <div className="w-11/12 flex justify-center items-center">
-                  <input
-                    className="w-6 h-6 "
-                    type="checkbox"
-                    id="Large"
-                    name="Large"
-                    value="Large"
-                  />
-                  <div className="inline-block">
-                    <div className="flex space-x-6 justify-center items-center">
-                      <label
-                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
-                        for=""
-                      ></label>
-                    </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    #SK25483
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Mikael Jordan
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    2022-07-02
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    $74500
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="text-center font-bold text-lg ">
-                    <div className=" justify-center items-center flex">
-                      <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-24 py-2 ">
-                        Pending
+                    <div className="w-11/12 ">
+                      <div className="py-8 bg-gray-100 w-full flex">
+                        <h1 className="text-gray-800 ml-4 font-semibold text-sm ">
+                          Customer
+                        </h1>
+                        <h1 className="text-gray-800  font-semibold text-sm ml-1 ">
+                          Name
+                        </h1>
+                      </div>
+                      <div className="flex mt-12">
+                        <h1 className="text-gray-600 ml-4 font-normal text-xs ">
+                          Winston
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs ml-1 ">
+                          Bosco
+                        </h1>
+                      </div>
+                      <div className="flex mt-12">
+                        <h1 className="text-gray-600 ml-4 font-normal text-xs ">
+                          Winston
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs ml-1 ">
+                          Bosco
+                        </h1>
+                      </div>
+                      <div className="flex mt-12">
+                        <h1 className="text-gray-600 ml-4 font-normal text-xs ">
+                          Winston
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs ml-1 ">
+                          Bosco
+                        </h1>
+                      </div>
+                      <div className="flex mt-12">
+                        <h1 className="text-gray-600 ml-4 font-normal text-xs ">
+                          Winston
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs ml-1 ">
+                          Bosco
+                        </h1>
+                      </div>
+                      <div className="flex mt-12">
+                        <h1 className="text-gray-600 ml-4 font-normal text-xs ">
+                          Winston
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs ml-1 ">
+                          Bosco
+                        </h1>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/XMLID 4.svg"
-                      width={75}
-                      height={30}
-                    />
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/menu.svg"
-                      width={22}
-                      height={22}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4 justify-center items-center mt-8 py-8">
-                <div className="w-11/12 flex justify-center items-center">
-                  <input
-                    className="w-6 h-6 "
-                    type="checkbox"
-                    id="Large"
-                    name="Large"
-                    value="Large"
-                  />
-                  <div className="inline-block">
-                    <div className="flex space-x-6 justify-center items-center">
-                      <label
-                        className="mr-2 text-sm leading-3 font-normal text-gray-600 dark:text-white"
-                        for=""
-                      ></label>
-                    </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    #SK25484
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    Mikael Jordan
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    2022-07-02
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <h1 className="text-center font-bold text-lg text-gray-800">
-                    $9475
-                  </h1>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="text-center font-bold text-lg ">
-                    <div className=" justify-center items-center flex">
-                      <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-20 py-2 ">
-                        Paid
+                    <div className="w-11/12 ">
+                      <div className="py-8 bg-gray-100 w-full ">
+                        <h1 className="text-gray-800 ml-8 font-semibold text-sm ">
+                          Date
+                        </h1>
+                      </div>
+                      <div className="flex mt-12 px-5 ">
+                        <h1 className="text-gray-600  font-normal text-xs flex ">
+                          2022-
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          07
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          -01
+                        </h1>
+                      </div>
+                      <div className="flex mt-12 px-5 ">
+                        <h1 className="text-gray-600  font-normal text-xs flex ">
+                          2022-
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          07
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          -01
+                        </h1>
+                      </div>
+                      <div className="flex mt-12 px-5 ">
+                        <h1 className="text-gray-600  font-normal text-xs flex ">
+                          2022-
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          07
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          -01
+                        </h1>
+                      </div>
+                      <div className="flex mt-12 px-5 ">
+                        <h1 className="text-gray-600  font-normal text-xs flex ">
+                          2022-
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          07
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          -01
+                        </h1>
+                      </div>
+                      <div className="flex mt-12 px-5 ">
+                        <h1 className="text-gray-600  font-normal text-xs flex ">
+                          2022-
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          07
+                        </h1>
+                        <h1 className="text-gray-600  font-normal text-xs  ">
+                          -01
+                        </h1>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/visa.svg"
-                      width={60}
-                      height={20}
-                    />
-                  </div>
-                </div>
-                <div className=" w-11/12 ">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      className="cursor-pointer"
-                      src="/menu.svg"
-                      width={22}
-                      height={22}
-                    />
+
+                    <div className="w-11/12">
+                      <div className="bg-gray-100 py-8">
+                        <h1 className="text-gray-800 font-semibold text-sm w-11/12 ml-8">
+                          Total
+                        </h1>
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        $6450
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        $7450
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        $74500
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        $9475
+                      </div>
+                      <div className="text-gray-600 font-normal text-xs mt-12 px-8">
+                        $5475
+                      </div>
+                    </div>
+                    <div className="w-11/12 ">
+                      <div className="bg-gray-100 py-8 px-5 flex">
+                        <h1 className="text-gray-800 font-semibold text-sm ">
+                          Payment
+                        </h1>
+                        <h1 className="text-gray-800 font-semibold text-sm ml-1">
+                          Status
+                        </h1>
+                      </div>
+                      <div className="text-center font-semibold text-xs mt-10 ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-16 py-2 ">
+                            Pending
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-center font-semibold text-xs mt-8 ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-16 py-2 ">
+                            Paid
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-center font-semibold text-xs mt-8 ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-blue-50 hover:bg-blue-100 cursor-pointer text-blue-500 rounded-full w-16 py-2 ">
+                            Refund
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-center font-semibold text-xs mt-8 ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-yellow-50 hover:bg-yellow-100 cursor-pointer text-yellow-500 rounded-full w-16 py-2 ">
+                            Pending
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-center font-semibold text-xs mt-8 ">
+                        <div className=" justify-center items-center flex">
+                          <div className="bg-green-50 hover:bg-green-100 cursor-pointer text-green-500 rounded-full w-16 py-2 ">
+                            Paid
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="w-11/12">
+                      <div className="bg-gray-100 py-8 px-5 flex">
+                        <h1 className="text-gray-800 font-semibold text-sm ">
+                          Payment
+                        </h1>
+                        <h1 className="text-gray-800 font-semibold text-sm ml-1">
+                          Method
+                        </h1>
+                      </div>
+                      <div className="flex justify-center items-center mt-12">
+                        <Image
+                          className="cursor-pointer"
+                          src="/visa.svg"
+                          width={40}
+                          height={20}
+                        />
+                      </div>
+                      <div className="flex justify-center items-center mt-10">
+                        <Image
+                          className="cursor-pointer"
+                          src="/master card.svg"
+                          width={40}
+                          height={20}
+                        />
+                      </div>
+                      <div className="flex justify-center items-center mt-12">
+                        <Image
+                          className="cursor-pointer"
+                          src="/master card.svg"
+                          width={40}
+                          height={20}
+                        />
+                      </div>
+                      <div className="flex justify-center items-center mt-12">
+                        <Image
+                          className="cursor-pointer"
+                          src="/XMLID 4.svg"
+                          width={55}
+                          height={20}
+                        />
+                      </div>
+                      <div className="flex justify-center items-center mt-10">
+                        <Image
+                          className="cursor-pointer"
+                          src="/visa.svg"
+                          width={40}
+                          height={20}
+                        />
+                      </div>
+                    </div>
+                    <div className="w-11/12">
+                      <div className="bg-gray-100 py-8 px-5 ">
+                        <h1 className="text-gray-800 font-semibold text-sm ">
+                          Details
+                        </h1>
+                      </div>
+                      <div className="mt-12">
+                        <div className="flex justify-center items-center">
+                          <Image
+                            className="cursor-pointer"
+                            src="/menu.svg"
+                            width={22}
+                            height={22}
+                          />
+                        </div>
+                      </div>
+                      <div className="mt-8">
+                        <div className="flex justify-center items-center">
+                          <Image
+                            className="cursor-pointer"
+                            src="/menu.svg"
+                            width={22}
+                            height={22}
+                          />
+                        </div>
+                      </div>
+                      <div className="mt-12">
+                        <div className="flex justify-center items-center">
+                          <Image
+                            className="cursor-pointer"
+                            src="/menu.svg"
+                            width={22}
+                            height={22}
+                          />
+                        </div>
+                      </div>
+                      <div className="mt-12">
+                        <div className="flex justify-center items-center">
+                          <Image
+                            className="cursor-pointer"
+                            src="/menu.svg"
+                            width={22}
+                            height={22}
+                          />
+                        </div>
+                      </div>
+                      <div className="px-5 mt-10">
+                        <div className="flex justify-center items-center">
+                          <Image
+                            className="cursor-pointer"
+                            src="/menu.svg"
+                            width={22}
+                            height={22}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1643,6 +2520,7 @@ export default function Index() {
           </div>
         </div>
       </div>
+
       <style>
         {`         
          .gap{
