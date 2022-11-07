@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { useState } from "react";
 import React, { useEffect } from "react";
 import Head from "next/head";
-import Navbar from "../comps/Navbar";
 export default function Index() {
+  const [sideBar, setsideBar] = useState();
   useEffect(() => {
     let line_chart = new Chart(document.getElementById("line_chart"), {
       type: "line",
@@ -44,13 +45,218 @@ export default function Index() {
   });
   return (
     <>
-      <Navbar />
       <Head>
         <script
           defer
           src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
         ></script>
       </Head>
+      <div className="block  lg:hidden xl:hidden 2xl:hidden md:hidden">
+        <div className="relative px-4 py-5 flex justify-between w-full">
+          {sideBar ? (
+            <button
+              onClick={() => setsideBar(!sideBar)}
+              aria-label="close nav bar"
+              role="button"
+              tabIndex={0}
+              onkeypress="{sidebarHandler(false)}"
+              className="right-0 mr-4 mt-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 absolute"
+              id="cross"
+              onclick="sidebarHandler(false)"
+            >
+              <svg
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 6L6 18"
+                  stroke="#1F2937"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M6 6L18 18"
+                  stroke="#1F2937"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          ) : (
+            <button
+              onClick={() => setsideBar(!sideBar)}
+              aria-label="open nav bar"
+              role="button"
+              className="right-0 mr-4 mt-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 absolute "
+              id="menu"
+              onclick="sidebarHandler(true)"
+            >
+              <svg
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 10H3"
+                  stroke="#1F2937"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M21 6H3"
+                  stroke="#1F2937"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M21 14H3"
+                  stroke="#1F2937"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M21 18H3"
+                  stroke="#1F2937"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          )}
+          <div className=" cursor-pointer">
+            <div className=" ml-2">
+              <label className="relative block ">
+                <span className="sr-only">Search</span>
+                <span className="absolute  inset-y-0 px-2 flex items-center">
+                  <Image
+                    className="cursor-pointer "
+                    src="/Frame (10).svg"
+                    width={24}
+                    height={24}
+                  />
+                </span>
+                <input
+                  className=" placeholder:text-slate-400 block bg-white  border border-slate-300 py-2 pl-9  shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-xs"
+                  placeholder="Search for anything..."
+                  type="text"
+                  name="search"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          className={
+            sideBar
+              ? "border-r border-gray-200 bg-white  h-full z-20 sm:block px-4 transition duration-150 ease-in-out absolute w-full top-30 transform translate-x-0"
+              : "border-r border-gray-200 bg-white  h-full z-20 sm:block px-4 transition duration-150 ease-in-out absolute w-full top-30 transform -translate-x-full"
+          }
+        >
+          <div>
+            <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-5 w-full pl-8 gap-5">
+              <div className="">
+                <Image
+                  className="cursor-pointer"
+                  src="/home-sharp.svg"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className="">
+                <h1 className="text-gray-600">Home</h1>
+              </div>
+            </button>
+            <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-3 w-full pl-8 gap-5">
+              <div className="">
+                <Image
+                  className="cursor-pointer"
+                  src="/stats-chart-sharp.svg"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className="">
+                <h1 className="text-gray-600 ">Dashboard</h1>
+              </div>
+            </button>
+            <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-3 w-full pl-8 gap-5">
+              <div className="">
+                <Image
+                  className="cursor-pointer"
+                  src="/inbox.svg"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className="">
+                <h1 className="text-gray-600">Inbox</h1>
+              </div>
+            </button>
+            <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-3 w-full pl-8 gap-5">
+              <div className="">
+                <Image
+                  className="cursor-pointer"
+                  src="/document-text-sharp.svg"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className="">
+                <h1 className="text-gray-600">Invoices</h1>
+              </div>
+            </button>
+            <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-3 w-full pl-8 gap-5">
+              <div className="">
+                <Image
+                  className="cursor-pointer"
+                  src="/chatbubbles-sharp.svg"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className="">
+                <h1 className="text-gray-600">Chatroom</h1>
+              </div>
+            </button>
+            <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-3 w-full pl-8 gap-5">
+              <div className="">
+                <Image
+                  className="cursor-pointer"
+                  src="/checkmark-done-sharp.svg"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className="">
+                <h1 className="text-gray-600">Tasks</h1>
+              </div>
+            </button>
+            <button className="flex bg-white hover:bg-sky-50 cursor-pointer focus:bg-sky-50 ease-in-out transition duration-500 py-3 mt-3 w-full pl-8 gap-5">
+              <div className="">
+                <Image
+                  className="cursor-pointer"
+                  src="/Q-mark.svg"
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className="">
+                <h1 className="text-gray-600 ">Help</h1>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div className="w-full p-6" />
+      </div>
       <div className="bg-gray-100 overflow-x-hidden  overflow-y-hidden">
         <div className="w-full py-4 bg-white  hidden lg:block xl:block 2xl:block md:block ">
           <div className="flex">
@@ -117,7 +323,7 @@ export default function Index() {
               <div className="">
                 <Image
                   className="cursor-pointer"
-                  src="/Home-sharp.svg"
+                  src="/home-sharp.svg"
                   width={24}
                   height={24}
                 />
@@ -206,7 +412,7 @@ export default function Index() {
             </button>
           </div>
           <div className=" w-full md:w-8/12 2xl:w-9/12 xl:w-10/12 lg:w-10/12 mt-5 lg:px-1 xl:px-1 2xl:px-5 px-0 ">
-            <h1 className="text-2xl text-gray-800 font-bold">Dashboard</h1>
+            <h1 className="text-2xl text-gray-800 font-bold px-2">Dashboard</h1>
             <div className="flex flex-col lg:flex-row  xl:flex-row 2xl:flex-row  justify-center items-center mt-6 gap-5">
               <div className="w-11/12 pt-4 pb-4 px-4 bg-white">
                 <div className="flex justify-center items-center py-4 ">
@@ -232,7 +438,7 @@ export default function Index() {
                       from previous month
                     </h1>
                   </div>
-                  <div className="lg:ml-auto xl:ml-auto md:ml-auto ml-0">
+                  <div className="lg:ml-auto xl:ml-auto md:ml-auto my-5 lg:my-0 xl:my-0 2xl:my-0 md:my-0 ml-0 my-5 lg:my-0 xl:my-0 2xl:my-0 md:my-0">
                     <div className="flex gap lg:pb-0 xl:pb-0 2xl:pb-0 md:pb-0 pb-16">
                       <div className="w-2 lg:ml-12 xl:ml-12 2xl:ml-12 md:ml-12 ml-3">
                         <a className="relative group " href="#">
@@ -524,7 +730,7 @@ export default function Index() {
                       from previous month
                     </h1>
                   </div>
-                  <div className="lg:ml-auto xl:ml-auto md:ml-auto ml-0">
+                  <div className="lg:ml-auto xl:ml-auto md:ml-auto my-5 lg:my-0 xl:my-0 2xl:my-0 md:my-0 ml-0">
                     <div className="flex gap flex gap lg:pb-0 xl:pb-0 2xl:pb-0 md:pb-0 pb-16">
                       <div className="w-2 lg:ml-12 xl:ml-12 2xl:ml-12 md:ml-12 ml-3">
                         <a className="relative group " href="#">
@@ -816,7 +1022,7 @@ export default function Index() {
                       from previous month
                     </h1>
                   </div>
-                  <div className="lg:ml-auto xl:ml-auto md:ml-auto ml-0">
+                  <div className="lg:ml-auto xl:ml-auto md:ml-auto my-5 lg:my-0 xl:my-0 2xl:my-0 md:my-0 ml-0 ">
                     <div className="flex gap flex gap lg:pb-0 xl:pb-0 2xl:pb-0 md:pb-0 pb-16">
                       <div className="w-2 lg:ml-12 xl:ml-12 2xl:ml-12 md:ml-12 ml-3">
                         <a className="relative group " href="#">
@@ -1093,8 +1299,17 @@ export default function Index() {
                   <div className="text-xl text-gray-800 font-bold">
                     Customers
                   </div>
-                  <div className="ml-auto text-lg text-gray-800 font-semibold">
-                    July 2022
+                  <div className="ml-auto text-lg text-gray-600 font-semibold">
+                    <select
+                      id="countries"
+                      class="cursor-pointer bg-white border border-gray-300 text-gray-600 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    >
+                      <option selected>July 2022</option>
+                      <option value="US">Aug 2022</option>
+                      <option value="CA">Sep 2022</option>
+                      <option value="FR">Oct 2022</option>
+                      <option value="DE">Nov 2022</option>
+                    </select>
                   </div>
                 </div>
                 <div className="flex justify-center items-center bg-white lg:mt-0 xl:mt-20 2xl:mt-32 mt-0   py-6">
@@ -1168,7 +1383,7 @@ export default function Index() {
                     </a>
                   </div>
                 </div>
-                <div className="flex px-4  mt-20">
+                <div className="flex px-4 lg:mt-22 xl:mt-20 2xl:mt-20 mt-20">
                   <div className="flex gap-2">
                     <div className="">
                       <Image
