@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 export default function Index() {
   return (
     <>
@@ -34,7 +33,17 @@ export default function Index() {
               </div>
             </div>
             <div className="ml-auto bg-white h-screen lg:w-7/12  xl:w-7/12 2xl:w-7/12 w-full rounded ">
-              <div className="absolute right-3 pt-3 ">English (UK)</div>
+              <div className="absolute right-3 pt-3 ">
+                <select
+                  id="countries"
+                  class="cursor-pointer bg-white  text-gray-600 text-sm outline-none block w-full p-2 rounded-md dark:bg-gray-700 "
+                >
+                  <option selected>English (UK)</option>
+                  <option value="US">Arabic</option>
+                  <option value="CA">Italian </option>
+                  <option value="FR">French </option>
+                </select>
+              </div>
               <div className="container  mx-auto mt-44 lg:mt-24 xl:mt-44 2xl:mt-54 w-11/12 lg:w-7/12 xl:w-6/12 2xl:w-5/12 ">
                 <h1 className="text-xl mb-5 font-bold text-gray-800">
                   Sign in{" "}
@@ -109,7 +118,7 @@ export default function Index() {
                     </button>
                   </div>
                 </Link>
-                <h1 className="text-sm text-gray-600 mt-4 font-semibold cursor-pointer">
+                <h1 className="text-sm text-gray-600 mt-4 font-semibold">
                   Already have an account?{" "}
                   <span className="text-indigo-700 ">Log in</span>{" "}
                 </h1>
